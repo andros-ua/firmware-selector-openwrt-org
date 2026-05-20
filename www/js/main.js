@@ -14,7 +14,7 @@ import {
 let currentDevice = {};
 let urlParams;
 let customDevicePackages = {};
-const ofsVersion = "%GIT_VERSION%";
+const ofsVersion = `<a href="https://github.com/andros-ua/firmware-selector-openwrt-org/blob/main/CHANGELOG.md" target="_blank">version</a>`;
 const progress = {
   "tr-init": 5,
   "tr-queued": 10,
@@ -52,7 +52,7 @@ const buildAsuRequest = createAsuRequestBuilder({
 
 async function init() {
   urlParams = new URLSearchParams(window.location.search);
-  $("#ofs-version").innerText = ofsVersion;
+  $("#ofs-version").innerHTML = ofsVersion;
 
   if (typeof config.asu_url !== "undefined") {
     show("#asu");
